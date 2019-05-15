@@ -1,0 +1,3 @@
+cat rolodex.c|tr A-Z a-z>output.foo&
+vi /bin/ls/foo.cc>output&
+vi foo.cc>output&

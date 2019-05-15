@@ -1,0 +1,2 @@
+www.learnthenet.com/web-at-a-glance/url-examples/
+http://my.ebay.com:80/ws/eBayISAPI.dll?MyEbayBeta&MyEbay=&gbh=1&guest=1#myfragment

@@ -1,0 +1,10 @@
+domain: www.learnthenet.com
+path: web-at-a-glance/url-examples/
+<blank line>
+scheme: http
+domain: my.ebay.com
+port: 80
+path: ws/eBayISAPI.dll
+query_string: MyEbayBeta&MyEbay=&gbh=1&guest=1
+fragment_id: myfragment
+<blank line>

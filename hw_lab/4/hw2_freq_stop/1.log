@@ -1,0 +1,762 @@
+------------compiling main.cpp to create executable program main----------------
+g++  -ggdb   -std=c++11   main.cpp   -o   main
+main.cpp:37:21: error: no member named 'fisrt' in 'std::__1::map<std::__1::basic_string<char>, int, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, int> > >'
+        out << pair.fisrt << ": " << pair.second << "\n");
+               ~~~~ ^
+main.cpp:37:43: error: no member named 'second' in 'std::__1::map<std::__1::basic_string<char>, int, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, int> > >'
+        out << pair.fisrt << ": " << pair.second << "\n");
+                                     ~~~~ ^
+In file included from main.cpp:1:
+In file included from /Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:643:
+In file included from /Library/Developer/CommandLineTools/usr/include/c++/v1/memory:659:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:790:21: error: no member named 'push_back' in 'std::__1::set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::basic_string<char> > >'
+        {container->push_back(__value_); return *this;}
+         ~~~~~~~~~  ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:1812:19: note: in instantiation of member function 'std::__1::back_insert_iterator<std::__1::set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::basic_string<char> > > >::operator=' requested here
+        *__result = *__first;
+                  ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:1837:19: note: in instantiation of function template specialization 'std::__1::__copy<std::__1::istream_iterator<std::__1::basic_string<char>, char, std::__1::char_traits<char>, long>, std::__1::back_insert_iterator<std::__1::set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::basic_string<char> > > > >' requested here
+    return _VSTD::__copy(__unwrap_iter(__first), __unwrap_iter(__last), __unwrap_iter(__result));
+                  ^
+main.cpp:15:5: note: in instantiation of function template specialization 'std::__1::copy<std::__1::istream_iterator<std::__1::basic_string<char>, char, std::__1::char_traits<char>, long>, std::__1::back_insert_iterator<std::__1::set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::basic_string<char> > > > >' requested here
+    copy(istream_iterator<string>(stop),
+    ^
+In file included from main.cpp:1:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:965:9: error: no matching function for call to object of type '(lambda at main.cpp:27:9)'
+        __f(*__first);
+        ^~~
+main.cpp:25:5: note: in instantiation of function template specialization 'std::__1::for_each<std::__1::istream_iterator<std::__1::basic_string<char>, char, std::__1::char_traits<char>, long>, (lambda at main.cpp:27:9)>' requested here
+    for_each( istream_iterator<string>(in), // start of source       
+    ^
+main.cpp:27:9: note: candidate function not viable: 1st argument ('const std::__1::basic_string<char>') would lose const qualifier
+        [&](string & s){ 
+        ^
+In file included from main.cpp:1:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:4008:40: error: invalid operands to binary expression ('std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >' and 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >')
+        difference_type __len = __last - __first;
+                                ~~~~~~ ^ ~~~~~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:4201:5: note: in instantiation of function template specialization 'std::__1::__sort<std::__1::__less<std::__1::pair<const std::__1::basic_string<char>, int>, std::__1::pair<const std::__1::basic_string<char>, int> > &, std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> > >' requested here
+    __sort<_Comp_ref>(__first, __last, __comp);
+    ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:4210:12: note: in instantiation of function template specialization 'std::__1::sort<std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >, std::__1::__less<std::__1::pair<const std::__1::basic_string<char>, int>, std::__1::pair<const std::__1::basic_string<char>, int> > >' requested here
+    _VSTD::sort(__first, __last, __less<typename iterator_traits<_RandomAccessIterator>::value_type>());
+           ^
+main.cpp:33:5: note: in instantiation of function template specialization 'std::__1::sort<std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> > >' requested here
+    sort( begin(freq), end(freq) ); // sort all the words
+    ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:743:1: note: candidate template ignored: could not match 'reverse_iterator' against '__map_iterator'
+operator-(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1184:1: note: candidate template ignored: could not match 'move_iterator' against '__map_iterator'
+operator-(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1589:1: note: candidate template ignored: could not match '__wrap_iter' against '__map_iterator'
+operator-(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter2>& __y) _NOEXCEPT_DEBUG
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:530:11: note: candidate template ignored: could not match 'fpos' against '__map_iterator'
+streamoff operator-(const fpos<_StateT>& __x, const fpos<_StateT>& __y)
+          ^
+In file included from main.cpp:1:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:4082:33: error: no matching function for call to 'swap'
+                                swap(*__i, *__j);
+                                ^~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/type_traits:4589:1: note: candidate template ignored: requirement 'is_move_assignable<pair<const basic_string<char>, int> >::value' was not satisfied [with _Tp = std::__1::pair<const std::__1::basic_string<char>, int>]
+swap(_Tp& __x, _Tp& __y) _NOEXCEPT_(is_nothrow_move_constructible<_Tp>::value &&
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/utility:268:1: note: candidate template ignored: could not match '_Tp [_Np]' against 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >::value_type' (aka 'pair<const std::__1::basic_string<char>, int>')
+swap(_Tp (&__a)[_Np], _Tp (&__b)[_Np]) _NOEXCEPT_(__is_nothrow_swappable<_Tp>::value)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/utility:609:1: note: candidate template ignored: requirement '__is_swappable<const basic_string<char> >::value' was not satisfied [with _T1 = const std::__1::basic_string<char>, _T2 = int]
+swap(pair<_T1, _T2>& __x, pair<_T1, _T2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/tuple:163:6: note: candidate template ignored: could not match '__tuple_leaf' against 'pair'
+void swap(__tuple_leaf<_Ip, _Hp, _Ep>& __x, __tuple_leaf<_Ip, _Hp, _Ep>& __y)
+     ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/tuple:949:1: note: candidate template ignored: could not match 'tuple' against 'pair'
+swap(tuple<_Tp...>& __t, tuple<_Tp...>& __u)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2257:6: note: candidate template ignored: could not match '__compressed_pair' against 'pair'
+void swap(__compressed_pair<_T1, _T2>& __x, __compressed_pair<_T1, _T2>& __y)
+     ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2905:1: note: candidate template ignored: could not match 'unique_ptr' against 'pair'
+swap(unique_ptr<_Tp, _Dp>& __x, unique_ptr<_Tp, _Dp>& __y) _NOEXCEPT {__x.swap(__y);}
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:4887:1: note: candidate template ignored: could not match 'shared_ptr' against 'pair'
+swap(shared_ptr<_Tp>& __x, shared_ptr<_Tp>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:5186:1: note: candidate template ignored: could not match 'weak_ptr' against 'pair'
+swap(weak_ptr<_Tp>& __x, weak_ptr<_Tp>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3889:1: note: candidate template ignored: could not match 'basic_string' against 'pair'
+swap(basic_string<_CharT, _Traits, _Allocator>& __lhs,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__mutex_base:277:1: note: candidate template ignored: could not match 'unique_lock' against 'pair'
+swap(unique_lock<_Mutex>& __x, unique_lock<_Mutex>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/functional:1972:1: note: candidate template ignored: could not match 'function' against 'pair'
+swap(function<_Rp(_ArgTypes...)>& __x, function<_Rp(_ArgTypes...)>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:86:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(__bit_reference<_Cp> __x, __bit_reference<_Cp> __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:96:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(__bit_reference<_Cp> __x, __bit_reference<_Dp> __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:106:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(__bit_reference<_Cp> __x, bool& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:116:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(bool& __x, __bit_reference<_Cp> __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:460:1: note: candidate template ignored: could not match 'basic_filebuf' against 'pair'
+swap(basic_filebuf<_CharT, _Traits>& __x, basic_filebuf<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:1110:1: note: candidate template ignored: could not match 'basic_ifstream' against 'pair'
+swap(basic_ifstream<_CharT, _Traits>& __x, basic_ifstream<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:1268:1: note: candidate template ignored: could not match 'basic_ofstream' against 'pair'
+swap(basic_ofstream<_CharT, _Traits>& __x, basic_ofstream<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:1428:1: note: candidate template ignored: could not match 'basic_fstream' against 'pair'
+swap(basic_fstream<_CharT, _Traits>& __x, basic_fstream<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__split_buffer:627:1: note: candidate template ignored: could not match '__split_buffer' against 'pair'
+swap(__split_buffer<_Tp, _Allocator>& __x, __split_buffer<_Tp, _Allocator>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:3358:1: note: candidate template ignored: could not match 'vector' against 'pair'
+swap(vector<_Tp, _Allocator>& __x, vector<_Tp, _Allocator>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__tree:2681:1: note: candidate template ignored: could not match '__tree' against 'pair'
+swap(__tree<_Tp, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/set:800:1: note: candidate template ignored: could not match 'set' against 'pair'
+swap(set<_Key, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/set:1209:1: note: candidate template ignored: could not match 'multiset' against 'pair'
+swap(multiset<_Key, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:553:1: note: candidate template ignored: could not match '__map_value_compare' against 'pair'
+swap(__map_value_compare<_Key, _CP, _Compare, __b>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:1452:1: note: candidate template ignored: could not match 'map' against 'pair'
+swap(map<_Key, _Tp, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:1917:1: note: candidate template ignored: could not match 'multimap' against 'pair'
+swap(multimap<_Key, _Tp, _Compare, _Allocator>& __x,
+^
+In file included from main.cpp:1:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:4099:33: error: invalid operands to binary expression ('std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >' and 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >')
+                        if (__i >= __j)
+                            ~~~ ^  ~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/utility:588:1: note: candidate template ignored: could not match 'pair' against '__map_iterator'
+operator>=(const pair<_T1,_T2>& __x, const pair<_T1,_T2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:726:1: note: candidate template ignored: could not match 'reverse_iterator' against '__map_iterator'
+operator>=(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1167:1: note: candidate template ignored: could not match 'move_iterator' against '__map_iterator'
+operator>=(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1540:1: note: candidate template ignored: could not match '__wrap_iter' against '__map_iterator'
+operator>=(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter2>& __y) _NOEXCEPT_DEBUG
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1572:1: note: candidate template ignored: could not match '__wrap_iter' against '__map_iterator'
+operator>=(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter1>& __y) _NOEXCEPT_DEBUG
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/tuple:1203:1: note: candidate template ignored: could not match 'tuple' against '__map_iterator'
+operator>=(const tuple<_Tp...>& __x, const tuple<_Up...>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2941:1: note: candidate template ignored: could not match 'unique_ptr' against '__map_iterator'
+operator>=(const unique_ptr<_T1, _D1>& __x, const unique_ptr<_T2, _D2>& __y) {return !(__x < __y);}
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:3028:1: note: candidate template ignored: could not match 'unique_ptr' against '__map_iterator'
+operator>=(const unique_ptr<_T1, _D1>& __x, nullptr_t)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:3036:1: note: candidate template ignored: could not match 'unique_ptr' against '__map_iterator'
+operator>=(nullptr_t, const unique_ptr<_T1, _D1>& __x)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:4783:1: note: candidate template ignored: could not match 'shared_ptr' against '__map_iterator'
+operator>=(const shared_ptr<_Tp>& __x, const shared_ptr<_Up>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:4871:1: note: candidate template ignored: could not match 'shared_ptr' against '__map_iterator'
+operator>=(const shared_ptr<_Tp>& __x, nullptr_t) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:4879:1: note: candidate template ignored: could not match 'shared_ptr' against '__map_iterator'
+operator>=(nullptr_t, const shared_ptr<_Tp>& __x) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string_view:746:6: note: candidate template ignored: could not match 'basic_string_view' against '__map_iterator'
+bool operator>=(basic_string_view<_CharT, _Traits> __lhs, basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
+     ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string_view:754:6: note: candidate template ignored: could not match 'basic_string_view' against '__map_iterator'
+bool operator>=(basic_string_view<_CharT, _Traits> __lhs,
+     ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string_view:762:6: note: candidate template ignored: could not match 'basic_string_view' against '__map_iterator'
+bool operator>=(typename common_type<basic_string_view<_CharT, _Traits> >::type __lhs, 
+     ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3737:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator>=(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3746:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator>=(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3755:1: note: candidate template ignored: could not match 'const _CharT *' against 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >'
+operator>=(const _CharT* __lhs,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:3342:1: note: candidate template ignored: could not match 'vector' against '__map_iterator'
+operator>=(const vector<_Tp, _Allocator>& __x, const vector<_Tp, _Allocator>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/set:781:1: note: candidate template ignored: could not match 'set' against '__map_iterator'
+operator>=(const set<_Key, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/set:1191:1: note: candidate template ignored: could not match 'multiset' against '__map_iterator'
+operator>=(const multiset<_Key, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:1434:1: note: candidate template ignored: could not match 'map' against '__map_iterator'
+operator>=(const map<_Key, _Tp, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:1899:1: note: candidate template ignored: could not match 'multimap' against '__map_iterator'
+operator>=(const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
+^
+In file included from main.cpp:1:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:4101:25: error: no matching function for call to 'swap'
+                        swap(*__i, *__j);
+                        ^~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/type_traits:4589:1: note: candidate template ignored: requirement 'is_move_assignable<pair<const basic_string<char>, int> >::value' was not satisfied [with _Tp = std::__1::pair<const std::__1::basic_string<char>, int>]
+swap(_Tp& __x, _Tp& __y) _NOEXCEPT_(is_nothrow_move_constructible<_Tp>::value &&
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/utility:268:1: note: candidate template ignored: could not match '_Tp [_Np]' against 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >::value_type' (aka 'pair<const std::__1::basic_string<char>, int>')
+swap(_Tp (&__a)[_Np], _Tp (&__b)[_Np]) _NOEXCEPT_(__is_nothrow_swappable<_Tp>::value)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/utility:609:1: note: candidate template ignored: requirement '__is_swappable<const basic_string<char> >::value' was not satisfied [with _T1 = const std::__1::basic_string<char>, _T2 = int]
+swap(pair<_T1, _T2>& __x, pair<_T1, _T2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/tuple:163:6: note: candidate template ignored: could not match '__tuple_leaf' against 'pair'
+void swap(__tuple_leaf<_Ip, _Hp, _Ep>& __x, __tuple_leaf<_Ip, _Hp, _Ep>& __y)
+     ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/tuple:949:1: note: candidate template ignored: could not match 'tuple' against 'pair'
+swap(tuple<_Tp...>& __t, tuple<_Tp...>& __u)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2257:6: note: candidate template ignored: could not match '__compressed_pair' against 'pair'
+void swap(__compressed_pair<_T1, _T2>& __x, __compressed_pair<_T1, _T2>& __y)
+     ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2905:1: note: candidate template ignored: could not match 'unique_ptr' against 'pair'
+swap(unique_ptr<_Tp, _Dp>& __x, unique_ptr<_Tp, _Dp>& __y) _NOEXCEPT {__x.swap(__y);}
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:4887:1: note: candidate template ignored: could not match 'shared_ptr' against 'pair'
+swap(shared_ptr<_Tp>& __x, shared_ptr<_Tp>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:5186:1: note: candidate template ignored: could not match 'weak_ptr' against 'pair'
+swap(weak_ptr<_Tp>& __x, weak_ptr<_Tp>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3889:1: note: candidate template ignored: could not match 'basic_string' against 'pair'
+swap(basic_string<_CharT, _Traits, _Allocator>& __lhs,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__mutex_base:277:1: note: candidate template ignored: could not match 'unique_lock' against 'pair'
+swap(unique_lock<_Mutex>& __x, unique_lock<_Mutex>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/functional:1972:1: note: candidate template ignored: could not match 'function' against 'pair'
+swap(function<_Rp(_ArgTypes...)>& __x, function<_Rp(_ArgTypes...)>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:86:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(__bit_reference<_Cp> __x, __bit_reference<_Cp> __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:96:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(__bit_reference<_Cp> __x, __bit_reference<_Dp> __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:106:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(__bit_reference<_Cp> __x, bool& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:116:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(bool& __x, __bit_reference<_Cp> __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:460:1: note: candidate template ignored: could not match 'basic_filebuf' against 'pair'
+swap(basic_filebuf<_CharT, _Traits>& __x, basic_filebuf<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:1110:1: note: candidate template ignored: could not match 'basic_ifstream' against 'pair'
+swap(basic_ifstream<_CharT, _Traits>& __x, basic_ifstream<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:1268:1: note: candidate template ignored: could not match 'basic_ofstream' against 'pair'
+swap(basic_ofstream<_CharT, _Traits>& __x, basic_ofstream<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:1428:1: note: candidate template ignored: could not match 'basic_fstream' against 'pair'
+swap(basic_fstream<_CharT, _Traits>& __x, basic_fstream<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__split_buffer:627:1: note: candidate template ignored: could not match '__split_buffer' against 'pair'
+swap(__split_buffer<_Tp, _Allocator>& __x, __split_buffer<_Tp, _Allocator>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:3358:1: note: candidate template ignored: could not match 'vector' against 'pair'
+swap(vector<_Tp, _Allocator>& __x, vector<_Tp, _Allocator>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__tree:2681:1: note: candidate template ignored: could not match '__tree' against 'pair'
+swap(__tree<_Tp, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/set:800:1: note: candidate template ignored: could not match 'set' against 'pair'
+swap(set<_Key, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/set:1209:1: note: candidate template ignored: could not match 'multiset' against 'pair'
+swap(multiset<_Key, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:553:1: note: candidate template ignored: could not match '__map_value_compare' against 'pair'
+swap(__map_value_compare<_Key, _CP, _Compare, __b>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:1452:1: note: candidate template ignored: could not match 'map' against 'pair'
+swap(map<_Key, _Tp, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:1917:1: note: candidate template ignored: could not match 'multimap' against 'pair'
+swap(multimap<_Key, _Tp, _Compare, _Allocator>& __x,
+^
+In file included from main.cpp:1:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:4113:21: error: no matching function for call to 'swap'
+                    swap(*__i, *__j);
+                    ^~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/type_traits:4589:1: note: candidate template ignored: requirement 'is_move_assignable<pair<const basic_string<char>, int> >::value' was not satisfied [with _Tp = std::__1::pair<const std::__1::basic_string<char>, int>]
+swap(_Tp& __x, _Tp& __y) _NOEXCEPT_(is_nothrow_move_constructible<_Tp>::value &&
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/utility:268:1: note: candidate template ignored: could not match '_Tp [_Np]' against 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >::value_type' (aka 'pair<const std::__1::basic_string<char>, int>')
+swap(_Tp (&__a)[_Np], _Tp (&__b)[_Np]) _NOEXCEPT_(__is_nothrow_swappable<_Tp>::value)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/utility:609:1: note: candidate template ignored: requirement '__is_swappable<const basic_string<char> >::value' was not satisfied [with _T1 = const std::__1::basic_string<char>, _T2 = int]
+swap(pair<_T1, _T2>& __x, pair<_T1, _T2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/tuple:163:6: note: candidate template ignored: could not match '__tuple_leaf' against 'pair'
+void swap(__tuple_leaf<_Ip, _Hp, _Ep>& __x, __tuple_leaf<_Ip, _Hp, _Ep>& __y)
+     ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/tuple:949:1: note: candidate template ignored: could not match 'tuple' against 'pair'
+swap(tuple<_Tp...>& __t, tuple<_Tp...>& __u)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2257:6: note: candidate template ignored: could not match '__compressed_pair' against 'pair'
+void swap(__compressed_pair<_T1, _T2>& __x, __compressed_pair<_T1, _T2>& __y)
+     ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2905:1: note: candidate template ignored: could not match 'unique_ptr' against 'pair'
+swap(unique_ptr<_Tp, _Dp>& __x, unique_ptr<_Tp, _Dp>& __y) _NOEXCEPT {__x.swap(__y);}
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:4887:1: note: candidate template ignored: could not match 'shared_ptr' against 'pair'
+swap(shared_ptr<_Tp>& __x, shared_ptr<_Tp>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:5186:1: note: candidate template ignored: could not match 'weak_ptr' against 'pair'
+swap(weak_ptr<_Tp>& __x, weak_ptr<_Tp>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3889:1: note: candidate template ignored: could not match 'basic_string' against 'pair'
+swap(basic_string<_CharT, _Traits, _Allocator>& __lhs,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__mutex_base:277:1: note: candidate template ignored: could not match 'unique_lock' against 'pair'
+swap(unique_lock<_Mutex>& __x, unique_lock<_Mutex>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/functional:1972:1: note: candidate template ignored: could not match 'function' against 'pair'
+swap(function<_Rp(_ArgTypes...)>& __x, function<_Rp(_ArgTypes...)>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:86:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(__bit_reference<_Cp> __x, __bit_reference<_Cp> __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:96:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(__bit_reference<_Cp> __x, __bit_reference<_Dp> __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:106:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(__bit_reference<_Cp> __x, bool& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:116:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(bool& __x, __bit_reference<_Cp> __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:460:1: note: candidate template ignored: could not match 'basic_filebuf' against 'pair'
+swap(basic_filebuf<_CharT, _Traits>& __x, basic_filebuf<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:1110:1: note: candidate template ignored: could not match 'basic_ifstream' against 'pair'
+swap(basic_ifstream<_CharT, _Traits>& __x, basic_ifstream<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:1268:1: note: candidate template ignored: could not match 'basic_ofstream' against 'pair'
+swap(basic_ofstream<_CharT, _Traits>& __x, basic_ofstream<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:1428:1: note: candidate template ignored: could not match 'basic_fstream' against 'pair'
+swap(basic_fstream<_CharT, _Traits>& __x, basic_fstream<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__split_buffer:627:1: note: candidate template ignored: could not match '__split_buffer' against 'pair'
+swap(__split_buffer<_Tp, _Allocator>& __x, __split_buffer<_Tp, _Allocator>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:3358:1: note: candidate template ignored: could not match 'vector' against 'pair'
+swap(vector<_Tp, _Allocator>& __x, vector<_Tp, _Allocator>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__tree:2681:1: note: candidate template ignored: could not match '__tree' against 'pair'
+swap(__tree<_Tp, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/set:800:1: note: candidate template ignored: could not match 'set' against 'pair'
+swap(set<_Key, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/set:1209:1: note: candidate template ignored: could not match 'multiset' against 'pair'
+swap(multiset<_Key, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:553:1: note: candidate template ignored: could not match '__map_value_compare' against 'pair'
+swap(__map_value_compare<_Key, _CP, _Compare, __b>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:1452:1: note: candidate template ignored: could not match 'map' against 'pair'
+swap(map<_Key, _Tp, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:1917:1: note: candidate template ignored: could not match 'multimap' against 'pair'
+swap(multimap<_Key, _Tp, _Compare, _Allocator>& __x,
+^
+In file included from main.cpp:1:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:4123:17: error: invalid operands to binary expression ('std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >' and 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >')
+        if (__i < __j)
+            ~~~ ^ ~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/system_error:492:1: note: candidate function not viable: no known conversion from 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >' to 'const std::__1::error_condition' for 1st argument
+operator<(const error_condition& __x, const error_condition& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/system_error:569:1: note: candidate function not viable: no known conversion from 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >' to 'const std::__1::error_code' for 1st argument
+operator<(const error_code& __x, const error_code& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/utility:572:1: note: candidate template ignored: could not match 'pair' against '__map_iterator'
+operator< (const pair<_T1,_T2>& __x, const pair<_T1,_T2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:702:1: note: candidate template ignored: could not match 'reverse_iterator' against '__map_iterator'
+operator<(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1143:1: note: candidate template ignored: could not match 'move_iterator' against '__map_iterator'
+operator<(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1512:1: note: candidate template ignored: could not match '__wrap_iter' against '__map_iterator'
+operator<(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter2>& __y) _NOEXCEPT_DEBUG
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/tuple:1187:1: note: candidate template ignored: could not match 'tuple' against '__map_iterator'
+operator<(const tuple<_Tp...>& __x, const tuple<_Up...>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2920:1: note: candidate template ignored: could not match 'unique_ptr' against '__map_iterator'
+operator< (const unique_ptr<_T1, _D1>& __x, const unique_ptr<_T2, _D2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2978:1: note: candidate template ignored: could not match 'unique_ptr' against '__map_iterator'
+operator<(const unique_ptr<_T1, _D1>& __x, nullptr_t)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2987:1: note: candidate template ignored: could not match 'unique_ptr' against '__map_iterator'
+operator<(nullptr_t, const unique_ptr<_T1, _D1>& __x)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:4758:1: note: candidate template ignored: could not match 'shared_ptr' against '__map_iterator'
+operator<(const shared_ptr<_Tp>& __x, const shared_ptr<_Up>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:4823:1: note: candidate template ignored: could not match 'shared_ptr' against '__map_iterator'
+operator<(const shared_ptr<_Tp>& __x, nullptr_t) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:4831:1: note: candidate template ignored: could not match 'shared_ptr' against '__map_iterator'
+operator<(nullptr_t, const shared_ptr<_Tp>& __x) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string_view:671:6: note: candidate template ignored: could not match 'basic_string_view' against '__map_iterator'
+bool operator<(basic_string_view<_CharT, _Traits> __lhs, basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
+     ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string_view:678:6: note: candidate template ignored: could not match 'basic_string_view' against '__map_iterator'
+bool operator<(basic_string_view<_CharT, _Traits> __lhs,
+     ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string_view:686:6: note: candidate template ignored: could not match 'basic_string_view' against '__map_iterator'
+bool operator<(typename common_type<basic_string_view<_CharT, _Traits> >::type __lhs, 
+     ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3650:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator< (const basic_string<_CharT, _Traits, _Allocator>& __lhs,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3659:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator< (const basic_string<_CharT, _Traits, _Allocator>& __lhs,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3668:1: note: candidate template ignored: could not match 'const _CharT *' against 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >'
+operator< (const _CharT* __lhs,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:3326:1: note: candidate template ignored: could not match 'vector' against '__map_iterator'
+operator< (const vector<_Tp, _Allocator>& __x, const vector<_Tp, _Allocator>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/set:754:1: note: candidate template ignored: could not match 'set' against '__map_iterator'
+operator< (const set<_Key, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/set:1164:1: note: candidate template ignored: could not match 'multiset' against '__map_iterator'
+operator< (const multiset<_Key, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:1407:1: note: candidate template ignored: could not match 'map' against '__map_iterator'
+operator< (const map<_Key, _Tp, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:1872:1: note: candidate template ignored: could not match 'multimap' against '__map_iterator'
+operator< (const multimap<_Key, _Tp, _Compare, _Allocator>& __x,
+^
+In file included from main.cpp:1:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:4149:13: error: no matching function for call to 'swap'
+            swap(*__i, *__m);
+            ^~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/type_traits:4589:1: note: candidate template ignored: requirement 'is_move_assignable<pair<const basic_string<char>, int> >::value' was not satisfied [with _Tp = std::__1::pair<const std::__1::basic_string<char>, int>]
+swap(_Tp& __x, _Tp& __y) _NOEXCEPT_(is_nothrow_move_constructible<_Tp>::value &&
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/utility:268:1: note: candidate template ignored: could not match '_Tp [_Np]' against 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >::value_type' (aka 'pair<const std::__1::basic_string<char>, int>')
+swap(_Tp (&__a)[_Np], _Tp (&__b)[_Np]) _NOEXCEPT_(__is_nothrow_swappable<_Tp>::value)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/utility:609:1: note: candidate template ignored: requirement '__is_swappable<const basic_string<char> >::value' was not satisfied [with _T1 = const std::__1::basic_string<char>, _T2 = int]
+swap(pair<_T1, _T2>& __x, pair<_T1, _T2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/tuple:163:6: note: candidate template ignored: could not match '__tuple_leaf' against 'pair'
+void swap(__tuple_leaf<_Ip, _Hp, _Ep>& __x, __tuple_leaf<_Ip, _Hp, _Ep>& __y)
+     ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/tuple:949:1: note: candidate template ignored: could not match 'tuple' against 'pair'
+swap(tuple<_Tp...>& __t, tuple<_Tp...>& __u)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2257:6: note: candidate template ignored: could not match '__compressed_pair' against 'pair'
+void swap(__compressed_pair<_T1, _T2>& __x, __compressed_pair<_T1, _T2>& __y)
+     ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2905:1: note: candidate template ignored: could not match 'unique_ptr' against 'pair'
+swap(unique_ptr<_Tp, _Dp>& __x, unique_ptr<_Tp, _Dp>& __y) _NOEXCEPT {__x.swap(__y);}
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:4887:1: note: candidate template ignored: could not match 'shared_ptr' against 'pair'
+swap(shared_ptr<_Tp>& __x, shared_ptr<_Tp>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:5186:1: note: candidate template ignored: could not match 'weak_ptr' against 'pair'
+swap(weak_ptr<_Tp>& __x, weak_ptr<_Tp>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3889:1: note: candidate template ignored: could not match 'basic_string' against 'pair'
+swap(basic_string<_CharT, _Traits, _Allocator>& __lhs,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__mutex_base:277:1: note: candidate template ignored: could not match 'unique_lock' against 'pair'
+swap(unique_lock<_Mutex>& __x, unique_lock<_Mutex>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/functional:1972:1: note: candidate template ignored: could not match 'function' against 'pair'
+swap(function<_Rp(_ArgTypes...)>& __x, function<_Rp(_ArgTypes...)>& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:86:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(__bit_reference<_Cp> __x, __bit_reference<_Cp> __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:96:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(__bit_reference<_Cp> __x, __bit_reference<_Dp> __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:106:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(__bit_reference<_Cp> __x, bool& __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__bit_reference:116:1: note: candidate template ignored: could not match '__bit_reference' against 'pair'
+swap(bool& __x, __bit_reference<_Cp> __y) _NOEXCEPT
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:460:1: note: candidate template ignored: could not match 'basic_filebuf' against 'pair'
+swap(basic_filebuf<_CharT, _Traits>& __x, basic_filebuf<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:1110:1: note: candidate template ignored: could not match 'basic_ifstream' against 'pair'
+swap(basic_ifstream<_CharT, _Traits>& __x, basic_ifstream<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:1268:1: note: candidate template ignored: could not match 'basic_ofstream' against 'pair'
+swap(basic_ofstream<_CharT, _Traits>& __x, basic_ofstream<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:1428:1: note: candidate template ignored: could not match 'basic_fstream' against 'pair'
+swap(basic_fstream<_CharT, _Traits>& __x, basic_fstream<_CharT, _Traits>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__split_buffer:627:1: note: candidate template ignored: could not match '__split_buffer' against 'pair'
+swap(__split_buffer<_Tp, _Allocator>& __x, __split_buffer<_Tp, _Allocator>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:3358:1: note: candidate template ignored: could not match 'vector' against 'pair'
+swap(vector<_Tp, _Allocator>& __x, vector<_Tp, _Allocator>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/__tree:2681:1: note: candidate template ignored: could not match '__tree' against 'pair'
+swap(__tree<_Tp, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/set:800:1: note: candidate template ignored: could not match 'set' against 'pair'
+swap(set<_Key, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/set:1209:1: note: candidate template ignored: could not match 'multiset' against 'pair'
+swap(multiset<_Key, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:553:1: note: candidate template ignored: could not match '__map_value_compare' against 'pair'
+swap(__map_value_compare<_Key, _CP, _Compare, __b>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:1452:1: note: candidate template ignored: could not match 'map' against 'pair'
+swap(map<_Key, _Tp, _Compare, _Allocator>& __x,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/map:1917:1: note: candidate template ignored: could not match 'multimap' against 'pair'
+swap(multimap<_Key, _Tp, _Compare, _Allocator>& __x,
+^
+In file included from main.cpp:1:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:4157:65: error: invalid operands to binary expression ('std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >' and 'int')
+            if (_VSTD::__insertion_sort_incomplete<_Compare>(__i+1, __last, __comp))
+                                                             ~~~^~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:761:1: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'int'
+operator+(typename reverse_iterator<_Iter>::difference_type __n, const reverse_iterator<_Iter>& __x)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1202:1: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'int'
+operator+(typename move_iterator<_Iter>::difference_type __n, const move_iterator<_Iter>& __x)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1615:1: note: candidate template ignored: could not match '__wrap_iter<type-parameter-0-0>' against 'int'
+operator+(typename __wrap_iter<_Iter>::difference_type __n,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3765:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3778:1: note: candidate template ignored: could not match 'const _CharT *' against 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >'
+operator+(const _CharT* __lhs , const basic_string<_CharT,_Traits,_Allocator>& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3790:1: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'int'
+operator+(_CharT __lhs, const basic_string<_CharT,_Traits,_Allocator>& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3801:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, const _CharT* __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3813:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, _CharT __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3827:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, const basic_string<_CharT, _Traits, _Allocator>& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3835:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, basic_string<_CharT, _Traits, _Allocator>&& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3843:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, basic_string<_CharT, _Traits, _Allocator>&& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3851:1: note: candidate template ignored: could not match 'const _CharT *' against 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >'
+operator+(const _CharT* __lhs , basic_string<_CharT,_Traits,_Allocator>&& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3859:1: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'int'
+operator+(_CharT __lhs, basic_string<_CharT,_Traits,_Allocator>&& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3868:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, const _CharT* __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3876:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, _CharT __rhs)
+^
+In file included from main.cpp:1:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:4174:17: error: invalid operands to binary expression ('std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >' and 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >')
+        if (__i - __first < __last - __i)
+            ~~~ ^ ~~~~~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:743:1: note: candidate template ignored: could not match 'reverse_iterator' against '__map_iterator'
+operator-(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1184:1: note: candidate template ignored: could not match 'move_iterator' against '__map_iterator'
+operator-(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1589:1: note: candidate template ignored: could not match '__wrap_iter' against '__map_iterator'
+operator-(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter2>& __y) _NOEXCEPT_DEBUG
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:530:11: note: candidate template ignored: could not match 'fpos' against '__map_iterator'
+streamoff operator-(const fpos<_StateT>& __x, const fpos<_StateT>& __y)
+          ^
+In file included from main.cpp:1:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:3916:20: error: invalid operands to binary expression ('std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >' and 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >')
+    switch (__last - __first)
+            ~~~~~~ ^ ~~~~~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:4156:32: note: in instantiation of function template specialization 'std::__1::__insertion_sort_incomplete<std::__1::__less<std::__1::pair<const std::__1::basic_string<char>, int>, std::__1::pair<const std::__1::basic_string<char>, int> > &, std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> > >' requested here
+            bool __fs = _VSTD::__insertion_sort_incomplete<_Compare>(__first, __i, __comp);
+                               ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:4201:5: note: in instantiation of function template specialization 'std::__1::__sort<std::__1::__less<std::__1::pair<const std::__1::basic_string<char>, int>, std::__1::pair<const std::__1::basic_string<char>, int> > &, std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> > >' requested here
+    __sort<_Comp_ref>(__first, __last, __comp);
+    ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:4210:12: note: in instantiation of function template specialization 'std::__1::sort<std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >, std::__1::__less<std::__1::pair<const std::__1::basic_string<char>, int>, std::__1::pair<const std::__1::basic_string<char>, int> > >' requested here
+    _VSTD::sort(__first, __last, __less<typename iterator_traits<_RandomAccessIterator>::value_type>());
+           ^
+main.cpp:33:5: note: in instantiation of function template specialization 'std::__1::sort<std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> > >' requested here
+    sort( begin(freq), end(freq) ); // sort all the words
+    ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:743:1: note: candidate template ignored: could not match 'reverse_iterator' against '__map_iterator'
+operator-(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1184:1: note: candidate template ignored: could not match 'move_iterator' against '__map_iterator'
+operator-(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1589:1: note: candidate template ignored: could not match '__wrap_iter' against '__map_iterator'
+operator-(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter2>& __y) _NOEXCEPT_DEBUG
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:530:11: note: candidate template ignored: could not match 'fpos' against '__map_iterator'
+streamoff operator-(const fpos<_StateT>& __x, const fpos<_StateT>& __y)
+          ^
+In file included from main.cpp:1:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:3936:40: error: invalid operands to binary expression ('std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >' and 'int')
+    _RandomAccessIterator __j = __first+2;
+                                ~~~~~~~^~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:761:1: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'int'
+operator+(typename reverse_iterator<_Iter>::difference_type __n, const reverse_iterator<_Iter>& __x)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1202:1: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'int'
+operator+(typename move_iterator<_Iter>::difference_type __n, const move_iterator<_Iter>& __x)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1615:1: note: candidate template ignored: could not match '__wrap_iter<type-parameter-0-0>' against 'int'
+operator+(typename __wrap_iter<_Iter>::difference_type __n,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3765:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3778:1: note: candidate template ignored: could not match 'const _CharT *' against 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >'
+operator+(const _CharT* __lhs , const basic_string<_CharT,_Traits,_Allocator>& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3790:1: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'int'
+operator+(_CharT __lhs, const basic_string<_CharT,_Traits,_Allocator>& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3801:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, const _CharT* __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3813:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, _CharT __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3827:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, const basic_string<_CharT, _Traits, _Allocator>& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3835:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, basic_string<_CharT, _Traits, _Allocator>&& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3843:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, basic_string<_CharT, _Traits, _Allocator>&& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3851:1: note: candidate template ignored: could not match 'const _CharT *' against 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >'
+operator+(const _CharT* __lhs , basic_string<_CharT,_Traits,_Allocator>&& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3859:1: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'int'
+operator+(_CharT __lhs, basic_string<_CharT,_Traits,_Allocator>&& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3868:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, const _CharT* __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3876:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, _CharT __rhs)
+^
+In file included from main.cpp:1:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:3937:39: error: invalid operands to binary expression ('std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >' and 'int')
+    __sort3<_Compare>(__first, __first+1, __j, __comp);
+                               ~~~~~~~^~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:761:1: note: candidate template ignored: could not match 'reverse_iterator<type-parameter-0-0>' against 'int'
+operator+(typename reverse_iterator<_Iter>::difference_type __n, const reverse_iterator<_Iter>& __x)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1202:1: note: candidate template ignored: could not match 'move_iterator<type-parameter-0-0>' against 'int'
+operator+(typename move_iterator<_Iter>::difference_type __n, const move_iterator<_Iter>& __x)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/iterator:1615:1: note: candidate template ignored: could not match '__wrap_iter<type-parameter-0-0>' against 'int'
+operator+(typename __wrap_iter<_Iter>::difference_type __n,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3765:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs,
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3778:1: note: candidate template ignored: could not match 'const _CharT *' against 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >'
+operator+(const _CharT* __lhs , const basic_string<_CharT,_Traits,_Allocator>& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3790:1: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'int'
+operator+(_CharT __lhs, const basic_string<_CharT,_Traits,_Allocator>& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3801:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, const _CharT* __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3813:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, _CharT __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3827:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, const basic_string<_CharT, _Traits, _Allocator>& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3835:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, basic_string<_CharT, _Traits, _Allocator>&& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3843:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, basic_string<_CharT, _Traits, _Allocator>&& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3851:1: note: candidate template ignored: could not match 'const _CharT *' against 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >'
+operator+(const _CharT* __lhs , basic_string<_CharT,_Traits,_Allocator>&& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3859:1: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'int'
+operator+(_CharT __lhs, basic_string<_CharT,_Traits,_Allocator>&& __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3868:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, const _CharT* __rhs)
+^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/string:3876:1: note: candidate template ignored: could not match 'basic_string' against '__map_iterator'
+operator+(basic_string<_CharT, _Traits, _Allocator>&& __lhs, _CharT __rhs)
+^
+In file included from main.cpp:1:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:965:9: error: no matching function for call to object of type '(lambda at main.cpp:36:24)'
+        __f(*__first);
+        ^~~
+main.cpp:39:5: note: in instantiation of function template specialization 'std::__1::for_each<std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >, (lambda at main.cpp:36:24)>' requested here
+    for_each( begin(freq), end(freq),lambdaWrite);
+    ^
+main.cpp:36:24: note: candidate function not viable: no known conversion from 'std::__1::__map_iterator<std::__1::__tree_iterator<std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, int>, void *> *, long> >::value_type' (aka 'pair<const std::__1::basic_string<char>, int>') to 'const map<std::__1::string, int>' (aka 'const map<basic_string<char, char_traits<char>, allocator<char> >, int>') for 1st argument
+    auto lambdaWrite = [&out](const map<string, int> &pair){
+                       ^
+17 errors generated.
+make: *** [main] Error 1

@@ -1,0 +1,60 @@
+initial test: 0
+constructPrimeSet for 46328 until 46327
+46328: has prime of: 
+i, prime: 0,2
+2 * 
+new num 23164
+2 * 
+new num 11582
+2 * 
+new num 5791
+i, prime: 1,3
+i, prime: 2,5
+i, prime: 3,7
+i, prime: 4,11
+i, prime: 5,13
+i, prime: 6,17
+i, prime: 7,19
+i, prime: 8,23
+i, prime: 9,29
+i, prime: 10,31
+i, prime: 11,37
+i, prime: 12,41
+i, prime: 13,43
+i, prime: 14,47
+i, prime: 15,53
+i, prime: 16,59
+i, prime: 17,61
+i, prime: 18,67
+i, prime: 19,71
+i, prime: 20,73
+5791
+constructPrimeSet for 45 until 46327
+45: has prime of: 
+i, prime: 0,2
+i, prime: 1,3
+3 * 
+new num 15
+3 * 
+new num 5
+5
+constructPrimeSet for 16 until 46327
+16: has prime of: 
+i, prime: 0,2
+2 * 
+new num 8
+2 * 
+new num 4
+2 * 
+new num 2
+2
+new num 1
+constructPrimeSet for 99 until 46327
+99: has prime of: 
+i, prime: 0,2
+i, prime: 1,3
+3 * 
+new num 33
+3 * 
+new num 11
+11

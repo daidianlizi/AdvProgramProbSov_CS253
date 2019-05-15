@@ -1,0 +1,21 @@
+script hw3.script
+make clean 
+make
+gdb roman 
+b 42
+info b
+watch isvalidinput
+r
+XI
+print isvalidinput
+s
+bt
+s
+s
+quit
+make clean 
+ls
+cat Makefile 
+
+
+exit //script

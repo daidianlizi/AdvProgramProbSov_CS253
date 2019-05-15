@@ -1,0 +1,37 @@
+12
+
+A 4 3
+B K L
+
+B 3 4
+A C
+
+C 2 4
+B D F
+
+D 2 3
+C E
+
+E 0 0
+D
+
+F 1 5
+C G
+
+G 6 4
+F H
+
+H 6 2
+G I J
+
+I 5 1
+H
+
+J 3 2
+H K
+
+K 3 3
+A J
+
+L 8 3
+A
